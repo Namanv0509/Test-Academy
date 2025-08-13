@@ -18,6 +18,7 @@
 ## See https://gohugo.io/categories/installation
 setup:
 	npm install
+	go mod download
 
 ## Run on your local machine with draft and future content enabled.
 site: check-go
@@ -29,7 +30,8 @@ build:
 
 ## Build site for local consumption
 build-preview:
-	hugo --baseURL=$(BASEURL)
+	hugo --baseURL=$(BASEURL) -d public
+	npm run build
 
 ## Empty build cache and run on your local machine.
 clean: 
